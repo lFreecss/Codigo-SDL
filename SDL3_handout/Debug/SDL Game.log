@@ -1,9 +1,10 @@
-﻿  ModuleRender.cpp
-  Generando código...
-  Compilando...
+﻿  ModuleWindow.cpp
+  ModuleTextures.cpp
+  ModuleRender.cpp
+  ModuleInput.cpp
+  Main.cpp
+  Globals.cpp
   Application.cpp
   Generando código...
-  Omitiendo... (no se detectaron cambios relevantes)
-  ModuleTextures.cpp
-  SDL Game.vcxproj -> G:\UPC\Projecte 1\TO DO\SDL3_handout\Debug\SDL3 Handout.exe
-  SDL Game.vcxproj -> G:\UPC\Projecte 1\TO DO\SDL3_handout\Debug\SDL3 Handout.pdb (Full PDB)
+  SDL Game.vcxproj -> C:\Users\David\Desktop\Codigo-SDL\SDL3_handout\Debug\SDL3 Handout.exe
+  SDL Game.vcxproj -> C:\Users\David\Desktop\Codigo-SDL\SDL3_handout\Debug\SDL3 Handout.pdb (Full PDB)

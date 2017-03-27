@@ -47,7 +47,6 @@ bool ModuleTextures::CleanUp()
 	for (int i = 0; i < MAX_TEXTURES; ++i){
 	SDL_DestroyTexture(textures[i]);
 	}
-		IMG_Quit();
 	IMG_Quit();
 	return true;
 }
@@ -74,6 +73,7 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 			// add the texture to our own array so we can properly free them
 			textures[last_texture++] = ret;
 		}
+		SDL_FreeSurface(surface);
 	}
 	return ret;
 }
