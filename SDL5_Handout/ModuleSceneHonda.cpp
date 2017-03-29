@@ -70,9 +70,10 @@ update_status ModuleSceneHonda::Update()
 
 	// TODO 3: make so pressing SPACE the KEN stage is loaded
 	
-	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && gate == true) {
-		gate = false;
-		App->fade->FadeToBlack(this, App->scene_ken, 3);
+	if (App->input->keyboard[SDL_SCANCODE_SPACE] == 1 && App->scene_ken->gate == false) {
+		App->scene_ken->gate = true;
+		App->fade->FadeToBlack(this, App->scene_ken, 1);
+
 		/*App->scene_honda->Disable();
 		App->scene_ken->Enable();*/
 	}

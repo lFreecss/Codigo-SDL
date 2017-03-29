@@ -25,7 +25,7 @@ public:
 	SDL_Rect foreground;
 	SDL_Rect background;
 	Animation water;
-	bool gate = true;
+	
 };
 
 #endif // __MODULESCENEHONDA_H__

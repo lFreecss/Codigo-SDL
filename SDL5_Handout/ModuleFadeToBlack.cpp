@@ -7,6 +7,8 @@
 #include "SDL/include/SDL_timer.h"
 #include "ModuleSceneKen.h"
 #include "ModuleSceneHonda.h"
+#include "Module.h"
+#include "ModuleInput.h"
 
 ModuleFadeToBlack::ModuleFadeToBlack()
 {
@@ -39,6 +41,9 @@ update_status ModuleFadeToBlack::Update()
 		{
 			if(now >= total_time)
 			{
+				off->CleanUp();
+				off->Disable();
+				on->Enable();
 				// TODO 2: enable / disable the modules received when FadeToBlacks() gets called
 			
 				// ---
@@ -54,6 +59,13 @@ update_status ModuleFadeToBlack::Update()
 
 			if(now >= total_time)
 				current_step = fade_step::none;
+	
+		   if (off == App->scene_ken) {
+			   App->scene_ken->gate = false;
+				}
+		else{
+			App->scene_ken->gate = true;
+			}
 		} break;
 	}
 
@@ -68,16 +80,17 @@ update_status ModuleFadeToBlack::Update()
 bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on, float time)
 {
 	bool ret = false;
-	
-	if(current_step == fade_step::none)
-	{
-		App -> fade -> moff -> Disable();
-		App -> fade -> mon -> Enable();
-		current_step = fade_step::fade_to_black;
-		start_time = SDL_GetTicks();
-		total_time = (Uint32)(time * 0.5f * 1000.0f);
-		ret = true;
-	}
-
+		if (current_step == fade_step::none)
+		{
+			current_step = fade_step::fade_to_black;
+			start_time = SDL_GetTicks();
+			if (start_time > total_time) {
+				start_time = total_time;
+			}
+			total_time = (Uint32)(time * 0.5f * 1000.0f);
+			on = module_on;
+			off = module_off;
+			ret = true;
+		}
 	return ret;
 }

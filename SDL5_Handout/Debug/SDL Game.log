@@ -1,5 +1,2 @@
-﻿  ModuleFadeToBlack.cpp
-c:\users\davidvm12\desktop\codigo-sdl\sdl5_handout\modulefadetoblack.cpp(75): error C2819: type 'Module' does not have an overloaded member 'operator ->'
-  c:\users\davidvm12\desktop\codigo-sdl\sdl5_handout\module.h(5): note: see declaration of 'Module'
-  c:\users\davidvm12\desktop\codigo-sdl\sdl5_handout\modulefadetoblack.cpp(75): note: did you intend to use '.' instead?
-c:\users\davidvm12\desktop\codigo-sdl\sdl5_handout\modulefadetoblack.cpp(75): error C2232: '->Module::Enable': left operand has 'class' type, use '.'
+﻿  SDL Game.vcxproj -> C:\Users\davidvm12\Desktop\Codigo-SDL\SDL5_Handout\Debug\SDL5 Handout.exe
+  SDL Game.vcxproj -> C:\Users\davidvm12\Desktop\Codigo-SDL\SDL5_Handout\Debug\SDL5 Handout.pdb (Full PDB)
