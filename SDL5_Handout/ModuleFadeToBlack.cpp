@@ -71,8 +71,8 @@ bool ModuleFadeToBlack::FadeToBlack(Module* module_off, Module* module_on, float
 	
 	if(current_step == fade_step::none)
 	{
-		moff->Disable();
-		mon->Enable();
+		App -> fade -> moff -> Disable();
+		App -> fade -> mon -> Enable();
 		current_step = fade_step::fade_to_black;
 		start_time = SDL_GetTicks();
 		total_time = (Uint32)(time * 0.5f * 1000.0f);
