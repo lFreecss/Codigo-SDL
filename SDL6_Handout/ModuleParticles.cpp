@@ -33,6 +33,10 @@ bool ModuleParticles::Start()
 	explosion.anim.speed = 0.3f;
 
 	// TODO 2: Create the template for a new particle "laser"
+	laser.anim.PushBack({ 249, 103, 16, 12 });
+	laser.anim.PushBack({ 232, 103, 16, 12 });
+	laser.anim.loop = false;
+	laser.anim.speed = 0.07f;
 
 	return true;
 }
@@ -90,7 +94,6 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, Uint32
 	p->born = SDL_GetTicks() + delay;
 	p->position.x = x;
 	p->position.y = y;
-
 	active[last_particle++] = p;
 }
 
