@@ -4,6 +4,7 @@
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModuleParticles.h"
+#include "p2Point.h"
 
 #include "SDL/include/SDL_timer.h"
 
@@ -37,7 +38,8 @@ bool ModuleParticles::Start()
 	laser.anim.PushBack({ 232, 103, 16, 12 });
 	laser.anim.loop = false;
 	laser.anim.speed = 0.07f;
-
+	//laser.speed += 1; HAY QUE ARREGLAR ESTO
+	laser.life = 3000;
 	return true;
 }
 
