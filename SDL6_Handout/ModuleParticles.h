@@ -5,6 +5,8 @@
 #include "Animation.h"
 #include "Globals.h"
 #include "p2Point.h"
+#include "SDL_mixer\include\SDL_mixer.h"
+#include "SDL/include/SDL.h"
 
 #define MAX_ACTIVE_PARTICLES 100
 
@@ -47,6 +49,7 @@ public:
 
 	Particle explosion;
 	Particle laser;
+	Mix_Chunk* lasersound = nullptr;
 };
 
 #endif // __MODULEPARTICLES_H__

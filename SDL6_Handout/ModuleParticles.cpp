@@ -21,7 +21,7 @@ bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
 	graphics = App->textures->Load("rtype/particles.png");
-
+	lasersound = Mix_LoadWAV("rtype/laser.wav");
 	// Explosion particle
 	explosion.anim.PushBack({274, 296, 33, 30});
 	explosion.anim.PushBack({313, 296, 33, 30});
@@ -46,6 +46,9 @@ bool ModuleParticles::CleanUp()
 {
 	LOG("Unloading particles");
 	App->textures->Unload(graphics);
+	Mix_FreeChunk(lasersound);
+	Mix_CloseAudio();
+	lasersound = nullptr;
 
 	for(uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
 	{
@@ -80,6 +83,7 @@ update_status ModuleParticles::Update()
 			if(p->fx_played == false)
 			{
 				p->fx_played = true;
+				Mix_PlayChannel(-1, lasersound, 0);
 				// Play particle fx here
 			}
 		}

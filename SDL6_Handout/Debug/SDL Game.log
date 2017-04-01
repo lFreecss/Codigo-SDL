@@ -1,15 +1,2 @@
-﻿  ModuleWindow.cpp
-  ModuleSceneIntro.cpp
-  ModuleTextures.cpp
-  ModuleSceneSpace.cpp
-  ModuleRender.cpp
-  ModulePlayer.cpp
-  ModuleParticles.cpp
-  ModuleInput.cpp
-  ModuleFadeToBlack.cpp
-  Main.cpp
-  Globals.cpp
-  Application.cpp
-  Generando código...
-  SDL Game.vcxproj -> C:\Users\David\Desktop\Codigo-SDL\SDL6_Handout\Debug\SDL6 Handout.exe
+﻿  SDL Game.vcxproj -> C:\Users\David\Desktop\Codigo-SDL\SDL6_Handout\Debug\SDL6 Handout.exe
   SDL Game.vcxproj -> C:\Users\David\Desktop\Codigo-SDL\SDL6_Handout\Debug\SDL6 Handout.pdb (Full PDB)
