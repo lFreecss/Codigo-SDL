@@ -50,6 +50,7 @@ bool ModuleSceneIntro::CleanUp()
 {
 	LOG("Unloading SDL audio");
 	Mix_FreeMusic(music);
+	Mix_CloseAudio();
 	Mix_FreeChunk(starting);
 	Mix_CloseAudio();
 
