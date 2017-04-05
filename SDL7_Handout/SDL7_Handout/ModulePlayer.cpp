@@ -6,6 +6,8 @@
 #include "ModuleRender.h"
 #include "ModuleCollision.h"
 #include "ModuleFadeToBlack.h"
+#include "ModuleSceneIntro.h"
+#include "ModuleSceneSpace.h"
 #include "ModulePlayer.h"
 
 // Reference at https://www.youtube.com/watch?v=OEhmUuehGOA
@@ -42,7 +44,7 @@ bool ModulePlayer::Start()
 	position.y = 120;
 
 	// TODO 2: Add a collider to the player
-	c1 = App->collision->AddCollider({ position.x, position.y, 32, 14 }, COLLIDER_PLAYER, this);
+	collider = App->collision->AddCollider({ position.x, position.y, 32, 14 }, COLLIDER_PLAYER, this);
 
 	return true;
 }
@@ -53,6 +55,7 @@ bool ModulePlayer::CleanUp()
 	LOG("Unloading player");
 
 	App->textures->Unload(graphics);
+	App->collision->EraseCollider(collider);
 
 	return true;
 }
@@ -102,7 +105,7 @@ update_status ModulePlayer::Update()
 		current_animation = &idle;
 
 	// TODO 3: Update collider position to player position
-	c1->SetPos(position.x, position.y);
+	collider->SetPos(position.x, position.y);
 
 	// Draw everything --------------------------------------
 	App->render->Blit(graphics, position.x, position.y, &(current_animation->GetCurrentFrame()));
@@ -111,4 +114,12 @@ update_status ModulePlayer::Update()
 }
 
 // TODO 4: Detect collision with a wall. If so, go back to intro screen.
-
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
+{
+		if (graphics != nullptr && collider == c1)
+		{
+		
+			App->particles->AddParticle(App->particles->explosion, position.x, position.y, COLLIDER_NONE);
+			App->fade->FadeToBlack(App->scene_space, (Module*)App->scene_intro);
+		}
+}

@@ -20,10 +20,12 @@ public:
 	update_status Update();
 	bool CleanUp();
 
+	void OnCollision(Collider* c1, Collider* c2);
+
 public:
 
 	SDL_Texture* graphics = nullptr;
-	Collider* c1;
+	Collider* collider = nullptr;
 	Animation* current_animation = nullptr;
 	Animation idle;
 	Animation up;
