@@ -1,0 +1,4 @@
+﻿  Enemy_BrownCookies.cpp
+c:\users\adriagc2\downloads\sdl8_handout\sdl8_handout\enemy_browncookies.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  SDL Game.vcxproj -> C:\Users\adriagc2\Downloads\SDL8_Handout\SDL8_Handout\Debug\SDL8 Handout.exe
+  SDL Game.vcxproj -> C:\Users\adriagc2\Downloads\SDL8_Handout\SDL8_Handout\Debug\SDL8 Handout.pdb (Full PDB)
